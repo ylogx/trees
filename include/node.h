@@ -15,4 +15,9 @@ class Node {
         Node *left, *right;
 };
 
+
+Node* getNode(datatype info, Node *left, Node *right);
+Node* getLeaf(datatype);
+Node* generateTree();
+
 #endif

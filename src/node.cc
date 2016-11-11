@@ -30,11 +30,3 @@ Node * generateTree() {
     assert(ptree->left->info == 8);
     return ptree;
 }
-
-#include <gtest/gtest.h>
-int main(int argc, char *argv[]) {
-   ::testing::InitGoogleTest(&argc, argv);
-    Node *ptree = generateTree();
-    preorder(ptree);
-    return RUN_ALL_TESTS();
-}
