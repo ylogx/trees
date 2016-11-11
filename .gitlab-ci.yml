@@ -1,5 +1,6 @@
 #image: nercury:cmake-cpp
-image: trusty:base
+#image: trusty:base
+image: ubuntu:yakkety
 before_script:
   - date
   - apt-get install -y cmake g++
