@@ -5,6 +5,7 @@ set(SRC_FILES
     include/node.h
     include/traversal.h
     src/node
+    src/node_test
     src/traversal
 )
 add_executable(tree ${SRC_FILES})
