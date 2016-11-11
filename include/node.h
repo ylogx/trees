@@ -8,9 +8,10 @@ struct node {
 
 typedef struct node *Node;
 */
+typedef int datatype;
 class Node {
     public:
-        int info;
+        datatype info;
         Node *left, *right;
 };
 

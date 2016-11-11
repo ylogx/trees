@@ -1,21 +1,33 @@
+#include <assert.h>
+#include <cstdlib>
+
 #include "../include/node.h"
 #include "../include/traversal.h"
 
-Node * getNode(void) {
-    return new Node();
+Node * getNode(datatype info, Node *left, Node *right) {
+    Node * node = new Node();
+    node->info = info;
+    node->left = left;
+    node->right = right;
+    return node;
+}
+
+Node * getLeaf(datatype info) {
+    Node *node = new Node();
+    node->info = info;
+    return node;
 }
 
 Node * generateTree() {
     Node *ptree;
     Node *p, *q;
-    ptree = getNode();
-    p = getNode();
-    q = getNode();
-    ptree->info = 10;
-    ptree->left = p;
-    ptree->right = q;
-    p->info = 9;
-    q->info = 11;
+    p = getNode(8, getLeaf(7), getLeaf(9));
+    q = getLeaf(11);
+    ptree = getNode(10, p, q);
+    assert(ptree != NULL);
+    assert(ptree->info == 10);
+    assert(ptree->right->info == 11);
+    assert(ptree->left->info == 8);
     return ptree;
 }
 
