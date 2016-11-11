@@ -1,11 +1,11 @@
-#include "node.h"
-#include "traversal.h"
+#include "../include/node.h"
+#include "../include/traversal.h"
 
 Node * getNode(void) {
     return new Node();
 }
 
-int main() {
+Node * generateTree() {
     Node *ptree;
     Node *p, *q;
     ptree = getNode();
@@ -16,6 +16,12 @@ int main() {
     ptree->right = q;
     p->info = 9;
     q->info = 11;
+    return ptree;
+}
+
+
+int main() {
+    Node *ptree = generateTree();
     preorder(ptree);
     return 0;
 }

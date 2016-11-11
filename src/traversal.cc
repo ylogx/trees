@@ -1,4 +1,4 @@
-#include "traversal.h"
+#include "../include/traversal.h"
 #include <iostream>
 
 /** DFS */
