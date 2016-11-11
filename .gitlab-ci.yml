@@ -1,0 +1,15 @@
+#image: java:openjdk-8-jdk
+before_script:
+  - date
+test:
+  script:
+    - mkdir build
+    - cd build
+    - cmake ..
+    - make
+    - ./tree
+build:
+  script:
+    - ./run
+after_script:
+  - date
