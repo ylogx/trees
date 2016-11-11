@@ -1,4 +1,4 @@
-#image: java:openjdk-8-jdk
+image: nercury:cmake-cpp
 before_script:
   - date
 test:
