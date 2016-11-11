@@ -1,7 +1,7 @@
 #image: nercury:cmake-cpp
 before_script:
   - date
-  - sudo apt-get install -y cmake g++
+  - apt-get install -y cmake g++
 test:
   script:
     - mkdir build
