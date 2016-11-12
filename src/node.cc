@@ -41,23 +41,3 @@ bool Node::isRight() {
     return this->father->right == this;
 }
 
-Node * makeTree() {
-    Node *ptree;
-    Node *p, *q;
-    p = Node::getNode(8, Node::getLeaf(7), Node::getLeaf(9));
-    q = Node::getLeaf(11);
-    ptree = Node::getNode(10, p, q);
-    assertTreeProperlyConstructed(ptree);
-    return ptree;
-}
-
-void assertTreeProperlyConstructed(Node *ptree) {
-    assert(ptree != NULL);
-    assert(ptree->info == 10);
-    assert(ptree->right->info == 11);
-    assert(ptree->left->info == 8);
-    assert(ptree->right->isRight());
-    assert(!ptree->left->isRight());
-    assert(ptree->left->isLeft());
-    assert(!ptree->right->isLeft());
-}

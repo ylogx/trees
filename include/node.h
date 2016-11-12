@@ -24,8 +24,5 @@ class Node {
         static Node* getLeaf(datatype);
 };
 
-Node* makeTree();
-void assertTreeProperlyConstructed(Node*);
-
 
 #endif
