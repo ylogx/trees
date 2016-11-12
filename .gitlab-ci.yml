@@ -10,10 +10,10 @@ test:
     - mkdir build
     - cd build
     - cmake ..
-    - make
+    - make tree
     - ./tree
 build:
   script:
-    - ./run
+    - ./run tree
 after_script:
   - date

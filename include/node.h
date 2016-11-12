@@ -13,11 +13,19 @@ class Node {
     public:
         datatype info;
         Node *left, *right;
+        Node *father;
+
+        void setLeft(Node*);
+        void setRight(Node*);
+        bool isLeft();
+        bool isRight();
+
+        static Node* getNode(datatype info, Node *left, Node *right);
+        static Node* getLeaf(datatype);
 };
 
+Node* makeTree();
+void assertTreeProperlyConstructed(Node*);
 
-Node* getNode(datatype info, Node *left, Node *right);
-Node* getLeaf(datatype);
-Node* generateTree();
 
 #endif
