@@ -4,7 +4,7 @@ image: ubuntu:yakkety
 before_script:
   - date
   - apt-get update -y
-  - apt-get install -y cmake g++
+  - ./setup.sh
 test:
   script:
     - mkdir build
