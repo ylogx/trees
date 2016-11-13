@@ -46,6 +46,7 @@ set(TREE_FILES
 set(TEST_FILES
     src/node_test
     src/run_test
+    src/basic_test
 )
 
 add_library(node ${NODE_SRC_FILES})
