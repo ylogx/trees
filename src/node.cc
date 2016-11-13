@@ -2,38 +2,42 @@
 #include <cstdlib>
 
 #include "../include/node.h"
-#include "../include/traversal.h"
 
-Node * getNode(datatype info, Node *left, Node *right) {
+
+Node * Node::getNode(datatype info, Node *left, Node *right) {
     Node * node = new Node();
     node->info = info;
-    node->left = left;
-    node->right = right;
+    node->setLeft(left);
+    node->setRight(right);
     return node;
 }
 
-Node * getLeaf(datatype info) {
-    Node *node = new Node();
-    node->info = info;
-    return node;
+Node * Node::getLeaf(datatype info) {
+    return Node::getNode(info, NULL, NULL);
+    //Node *leftLeaf = Node::getNode(-1, NULL, NULL);
+    //Node *rightLeaf = Node::getNode(-1, NULL, NULL);
+    //return Node::getNode(info, leftLeaf, rightLeaf);
 }
 
-Node * generateTree() {
-    Node *ptree;
-    Node *p, *q;
-    p = getNode(8, getLeaf(7), getLeaf(9));
-    q = getLeaf(11);
-    ptree = getNode(10, p, q);
-    assert(ptree != NULL);
-    assert(ptree->info == 10);
-    assert(ptree->right->info == 11);
-    assert(ptree->left->info == 8);
-    return ptree;
+void Node::setLeft(Node *left) {
+    this->left = left;
+    if (this->left != NULL) {
+        this->left->father = this;
+    }
 }
 
-
-int main() {
-    Node *ptree = generateTree();
-    preorder(ptree);
-    return 0;
+void Node::setRight(Node *right) {
+    this->right = right;
+    if (this->right != NULL) {
+        this->right->father = this;
+    }
 }
+
+bool Node::isLeft() {
+    return this->father->left == this;
+}
+
+bool Node::isRight() {
+    return this->father->right == this;
+}
+

@@ -4,16 +4,21 @@ image: ubuntu:yakkety
 before_script:
   - date
   - apt-get update -y
-  - apt-get install -y cmake g++
+  - ./setup.sh
 test:
   script:
+    - echo "Testing manual run in build folder"
     - mkdir build
     - cd build
     - cmake ..
     - make
-    - ./tree
+    - ./unit_tests
+    - echo "Now testing via runner script"
+    - cd ..
+    - ./run unit_tests
+    - ./run all
 build:
   script:
-    - ./run
+    - ./run tree
 after_script:
   - date
