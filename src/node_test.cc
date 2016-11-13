@@ -1,4 +1,4 @@
-#include "../include/node.h"
+/*#include "../include/node.h"*/
 #include <gtest/gtest.h>
 
 TEST(BasicTest, CompareInt) {
