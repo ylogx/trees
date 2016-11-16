@@ -19,14 +19,14 @@ class Graph:
     def dfs_visit(self, s):
         if s not in self.adj:
             return
-        for v in self.adj[s]:
+        for v in sorted(self.adj[s]):
             print('  dfs_visit for {}: {}'.format(v, self.parent))
             if v not in self.parent:
                 self.parent[v] = s
                 self.dfs_visit(v)
 
     def dfs(self):
-        for s in self.adj.keys():
+        for s in sorted(self.adj.keys()):
             print('dfs for {}: {}'.format(s, self.parent))
             if s not in self.parent:
                 self.parent[s] = None
